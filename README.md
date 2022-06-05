@@ -9,7 +9,7 @@ ttNew: macro function used to init the vector size to 0. returns a vector.<br />
 <br />
 ttGetElem: macro function used to get a vector element. Params: vector, index, element type. returns the element.<br />
 <br />
-ttPush: function used to insert an element at the end of a vector. Params: vector, element to insert.<br />
+ttPush: function used to insert an element at the front of a vector. Params: vector, element to insert.<br />
 <br />
 ttPop: function used to get an element out of a vector, starting at the front. Params: vector, element to get out.<br />
 <br />
