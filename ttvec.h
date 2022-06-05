@@ -24,9 +24,9 @@ typedef struct
 	(*(type*)vect.vec[index]); \
 })
 
-///used by the api! I advise you user not to use it.
+///used by the API! I advise you user not to use it.
 void ttAlloc(Ttvec* vect, int typeSize);
-///used by the api! I advise you user not to use it.
+///used by the API! I advise you user not to use it.
 void ttResize(Ttvec* vect, int newSize);
 
 void ttPush(Ttvec* vect, void* arg);
