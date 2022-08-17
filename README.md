@@ -20,13 +20,13 @@ ttResize: function used by the API to resize a vector. Not meant to be used by t
 
 Example usage:
 
-Ttvec vec = ttNew();
-int n = 2;
-ttPush(&vec, &n);
-
-for (int i = 0; i < vec.size; i++)
-{
-    printf("ELEM %d: %d", i, ttGetElem(vec, i, int));
-}
-
+Ttvec vec = ttNew();<br />
+int n = 2;<br />
+ttPush(&vec, &n);<br />
+<br />
+for (int i = 0; i < vec.size; i++)<br />
+{<br />
+    printf("ELEM %d: %d", i, ttGetElem(vec, i, int));<br />
+}<br />
+<br />
 ttVecFree(1, vec);
