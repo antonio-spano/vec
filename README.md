@@ -26,7 +26,7 @@ ttPush(&vec, &n);<br />
 <br />
 for (int i = 0; i < vec.size; i++)<br />
 {<br />
-    printf("ELEM %d: %d", i, ttGetElem(vec, i, int));<br />
+&nbsp;printf("ELEM %d: %d", i, ttGetElem(vec, i, int));<br />
 }<br />
 <br />
 ttVecFree(1, vec);
