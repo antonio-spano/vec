@@ -15,8 +15,8 @@ vecPop: function used to get an element out of a vector, starting at the front. 
 <br />
 vecFree: variadic function used to free vectors. Params: number of vectors to be freed, vectors to free.<br />
 <br />
-ttAlloc: function used by the API to initialize a vector's memory. Not meant to be used by the user.<br />
-ttResize: function used by the API to resize a vector. Not meant to be used by the user.<br />
+vecAlloc: function used by the API to initialize a vector's memory. Not meant to be used by the user.<br />
+vecResize: function used by the API to resize a vector. Not meant to be used by the user.<br />
 
 Example usage:
 
