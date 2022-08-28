@@ -1,33 +1,33 @@
-#include "ttvec.h"
+#include "vec.h"
 
-void ttAlloc(Ttvec* vect, int typeSize)
+void vecAlloc(Vec* vect, int typeSize)
 {
 	vect->vec = calloc(1, sizeof(typeSize));
 	vect->size = 1;
 	vect->typeSize = sizeof(typeSize);
 }
 
-void ttResize(Ttvec* vect, int newSize)
+void vecResize(Vec* vect, int newSize)
 {
 	vect->vec = realloc(vect->vec, newSize * vect->typeSize);
 	vect->size = newSize;
 }
 
-void ttPush(Ttvec* vect, void* arg)
+void vecPush(Vec* vect, void* arg)
 {
 	if (vect->size == 0)
 	{
-		ttAlloc(vect, sizeof(arg));
+		vecAlloc(vect, sizeof(arg));
 	}
 	else
 	{
-		ttResize(vect, vect->size + 1);
+		vecResize(vect, vect->size + 1);
 	}
 
 	vect->vec[vect->size - 1] = (void*)arg;
 }
 
-void ttPop(Ttvec* vect, void* arg)
+void vecPop(Vec* vect, void* arg)
 {
 	for (int i = vect->size - 1; i >= 0; i--)
 	{
@@ -41,20 +41,20 @@ void ttPop(Ttvec* vect, void* arg)
 				}
 			}
 
-			ttResize(vect, vect->size - 1);
+			vecResize(vect, vect->size - 1);
 			return;
 		}
 	}
 }
 
-void ttVecFree(int n, ...)
+void vecFree(int n, ...)
 {
 	va_list args;
 	va_start(args, n);
 
 	for (int i = 0; i < n; i++)
 	{
-		Ttvec vec = va_arg(args, Ttvec);
+		Vec vec = va_arg(args, Vec);
 		free(vec.vec);
 	}
 
