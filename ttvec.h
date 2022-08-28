@@ -1,5 +1,5 @@
-#ifndef TTVEC
-#define TTVEC
+#ifndef VEC
+#define VEC
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,29 +10,29 @@ typedef struct
 	void** vec;
 	int typeSize;
 	int size;
-} Ttvec;
+} Vec;
 
-#define ttNew() \
+#define vecNew() \
 ({ \
-	Ttvec vec; \
+	Vec vec; \
 	vec.size = 0; \
 	vec; \
 })
 
-#define ttGetElem(vect, index, type) \
+#define vecGetElem(vect, index, type) \
 ({ \
 	(*(type*)vect.vec[index]); \
 })
 
 ///used by the API! I advise you user not to use it.
-void ttAlloc(Ttvec* vect, int typeSize);
+void vecAlloc(Vec* vect, int typeSize);
 ///used by the API! I advise you user not to use it.
-void ttResize(Ttvec* vect, int newSize);
+void vecResize(Vec* vect, int newSize);
 
-void ttPush(Ttvec* vect, void* arg);
+void vecPush(Vec* vect, void* arg);
 
-void ttPop(Ttvec* vect, void* arg);
+void vecPop(Vec* vect, void* arg);
 
-void ttVecFree(int n, ...);
+void vecFree(int n, ...);
 
 #endif
